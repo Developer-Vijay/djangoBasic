@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Contact us {% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-4">
+    <img src="https://images.unsplash.com/photo-1537819191377-d3305ffddce4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3BhY2UlMjB3YWxscGFwZXJzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+        class="d-block w-100" alt="...">
+</div>
+<div class="container mx-1 py-4">
+
+
+    <h3 style="color: black;
+position: absolute;
+top: 360px;
+left: 150px;">Contact us </h3>
+
+
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name"  placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email"  name="email" placeholder="Enter your email address">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock body %}
